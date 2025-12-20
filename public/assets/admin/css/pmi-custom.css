@@ -1,0 +1,380 @@
+/* PMI Custom Colors - Red Theme */
+:root {
+  --pmi-red: #DC143C;
+  --pmi-red-dark: #B71C1C;
+  --pmi-red-light: #EF5350;
+}
+
+/* Sidebar Brand - PMI Logo */
+.sidebar .sidebar-brand {
+  background-color: var(--pmi-red) !important;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-text {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Active Nav Item */
+.sidebar .nav-item.active .nav-link {
+  background-color: rgba(220, 20, 60, 0.1) !important;
+  color: var(--pmi-red) !important;
+  width: auto !important;
+  max-width: calc(100% - 1rem) !important;
+}
+
+.sidebar .nav-item.active .nav-link i {
+  color: var(--pmi-red) !important;
+}
+
+/* Nav Link Hover */
+.sidebar .nav-item .nav-link:hover {
+  background-color: rgba(220, 20, 60, 0.1) !important;
+  color: var(--pmi-red) !important;
+  width: auto !important;
+  max-width: calc(100% - 1rem) !important;
+}
+
+.sidebar .nav-item .nav-link:hover i {
+  color: var(--pmi-red) !important;
+}
+
+/* Ensure nav-link doesn't stretch full width */
+.sidebar .nav-item .nav-link {
+  width: auto !important;
+  max-width: calc(100% - 1rem) !important;
+}
+
+/* Collapse Item Active */
+.sidebar .nav-item .collapse .collapse-inner .collapse-item.active,
+.sidebar .nav-item .collapsing .collapse-inner .collapse-item.active {
+  color: var(--pmi-red) !important;
+  font-weight: 600;
+}
+
+.sidebar .nav-item .collapse .collapse-inner .collapse-item:hover {
+  background-color: rgba(220, 20, 60, 0.1) !important;
+  color: var(--pmi-red) !important;
+  width: auto !important;
+  max-width: calc(100% - 1rem) !important;
+}
+
+/* Ensure collapse-item doesn't stretch */
+.sidebar .nav-item .collapse .collapse-inner .collapse-item {
+  width: auto !important;
+  max-width: calc(100% - 1rem) !important;
+}
+
+/* Topbar */
+.bg-navbar {
+  background-color: var(--pmi-red) !important;
+}
+
+/* Buttons Primary */
+.btn-primary {
+  background-color: var(--pmi-red) !important;
+  border-color: var(--pmi-red) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--pmi-red-dark) !important;
+  border-color: var(--pmi-red-dark) !important;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 20, 60, 0.5) !important;
+}
+
+/* Border Primary */
+.border-left-primary {
+  border-left: .25rem solid var(--pmi-red) !important;
+}
+
+.border-bottom-primary {
+  border-bottom: .25rem solid var(--pmi-red) !important;
+}
+
+/* Background Gradient Primary */
+.bg-gradient-primary {
+  background: linear-gradient(180deg, var(--pmi-red) 10%, var(--pmi-red-dark) 100%) !important;
+}
+
+/* Card Header */
+.card-header {
+  background-color: var(--pmi-red) !important;
+  color: #fff !important;
+}
+
+/* Badge */
+.badge-primary {
+  background-color: var(--pmi-red) !important;
+  color: #fff !important;
+}
+
+/* Dropdown */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--pmi-red) !important;
+}
+
+/* Scroll to Top */
+.scroll-to-top {
+  background-color: var(--pmi-red) !important;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--pmi-red-dark) !important;
+}
+
+/* Login Page */
+.bg-gradient-login {
+  background: linear-gradient(135deg, var(--pmi-red) 0%, var(--pmi-red-dark) 100%) !important;
+}
+
+/* Table */
+.table thead th {
+  background-color: var(--pmi-red) !important;
+  color: #fff !important;
+  border-color: var(--pmi-red-dark) !important;
+}
+
+/* Pagination */
+.page-item.active .page-link {
+  background-color: var(--pmi-red) !important;
+  border-color: var(--pmi-red) !important;
+}
+
+.page-link:hover {
+  color: var(--pmi-red) !important;
+}
+
+/* Link */
+a {
+  color: var(--pmi-red) !important;
+}
+
+a:hover {
+  color: var(--pmi-red-dark) !important;
+}
+
+/* Sidebar Toggle */
+#sidebarToggleTop:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Text Primary */
+.text-primary {
+  color: var(--pmi-red) !important;
+}
+
+/* Chart Colors */
+.chart-area {
+  border-left: 4px solid var(--pmi-red) !important;
+}
+
+/* Sidebar Brand Icon */
+.sidebar .sidebar-brand .sidebar-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Topbar Text */
+.topbar .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.topbar .navbar-nav .nav-link:hover {
+  color: #fff !important;
+}
+
+/* Alert */
+.alert-primary {
+  background-color: rgba(220, 20, 60, 0.1);
+  border-color: var(--pmi-red);
+  color: var(--pmi-red);
+}
+
+/* Progress Bar */
+.progress-bar {
+  background-color: var(--pmi-red) !important;
+}
+
+/* Input Focus */
+.form-control:focus {
+  border-color: var(--pmi-red) !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 20, 60, 0.25) !important;
+}
+
+/* Select Focus */
+.custom-select:focus {
+  border-color: var(--pmi-red) !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 20, 60, 0.25) !important;
+}
+
+/* Checkbox and Radio */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--pmi-red) !important;
+  border-color: var(--pmi-red) !important;
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--pmi-red) !important;
+  border-color: var(--pmi-red) !important;
+}
+
+/* Sidebar Divider */
+.sidebar hr.sidebar-divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin: 0.5rem 0 !important;
+}
+
+/* Sidebar Heading - Menu Utama */
+.sidebar .sidebar-heading {
+  color: #6c757d !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 0.75rem 1rem 0.5rem 1rem !important;
+  margin: 0 !important;
+  background-color: #f8f9fa !important;
+  border-left: 3px solid var(--pmi-red) !important;
+  margin-left: 0.5rem !important;
+  margin-right: 0.5rem !important;
+  border-radius: 4px 0 0 4px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.sidebar .sidebar-heading i {
+  margin-right: 0.5rem !important;
+  font-size: 0.75rem !important;
+  color: var(--pmi-red) !important;
+  width: 1rem !important;
+  text-align: center !important;
+}
+
+/* Sidebar Nav Link */
+.sidebar-light .nav-item .nav-link {
+  color: rgba(0, 0, 0, 0.7) !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  border-radius: 0.35rem !important;
+  margin: 0.15rem 0.5rem !important;
+}
+
+.sidebar-light .nav-item .nav-link i {
+  width: 1.2rem !important;
+  font-size: 0.875rem !important;
+  margin-right: 0.5rem !important;
+  text-align: center !important;
+}
+
+.sidebar-light .nav-item.active .nav-link {
+  color: var(--pmi-red) !important;
+  background-color: rgba(220, 20, 60, 0.1) !important;
+  font-weight: 600 !important;
+}
+
+.sidebar-light .nav-item.active .nav-link i {
+  color: var(--pmi-red) !important;
+}
+
+.sidebar-light .nav-item .nav-link:hover {
+  color: var(--pmi-red) !important;
+  background-color: rgba(220, 20, 60, 0.08) !important;
+}
+
+.sidebar-light .nav-item .nav-link:hover i {
+  color: var(--pmi-red) !important;
+}
+
+/* Collapse Inner - Submenu */
+.sidebar .collapse-inner {
+  padding: 0.5rem 0 !important;
+  margin: 0.25rem 0.5rem !important;
+  background-color: #ffffff !important;
+  border-radius: 0.35rem !important;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar .collapse-header {
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: #6c757d !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #e3e6f0 !important;
+}
+
+.sidebar .collapse-item {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: #3a3b45 !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.2s ease !important;
+  border-radius: 0.25rem !important;
+  margin: 0.15rem 0.5rem !important;
+}
+
+.sidebar .collapse-item i {
+  width: 1.2rem !important;
+  font-size: 0.75rem !important;
+  margin-right: 0.5rem !important;
+  text-align: center !important;
+  color: #6c757d !important;
+}
+
+.sidebar .collapse-item:hover {
+  background-color: rgba(220, 20, 60, 0.08) !important;
+  color: var(--pmi-red) !important;
+  text-decoration: none !important;
+}
+
+.sidebar .collapse-item:hover i {
+  color: var(--pmi-red) !important;
+}
+
+.sidebar .collapse-item.active {
+  background-color: rgba(220, 20, 60, 0.15) !important;
+  color: var(--pmi-red) !important;
+  font-weight: 600 !important;
+}
+
+.sidebar .collapse-item.active i {
+  color: var(--pmi-red) !important;
+}
+
+/* Nav Item Spacing */
+.sidebar .nav-item {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Sidebar Brand Spacing */
+.sidebar .sidebar-brand {
+  padding: 1rem 1.5rem !important;
+}
+
+/* Version Text */
+.sidebar .version {
+  padding: 0.75rem 1rem !important;
+  font-size: 0.75rem !important;
+  color: #6c757d !important;
+  text-align: center !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin-top: 0.5rem !important;
+}
+
