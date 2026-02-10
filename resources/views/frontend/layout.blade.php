@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html class="no-js" lang="id">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>@yield('title', 'Donasi PMI')</title>
     <meta name="description" content="@yield('description', 'Sistem Donasi PMI')" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/favicon.svg') }}" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/icon-pmi.jpeg') }}" />
     <link rel="alternate icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     <!-- ========================= CSS here ========================= -->
@@ -297,7 +298,7 @@
     <script src="{{ asset('assets/js/glightbox.min.js') }}"></script>
     <script src="{{ asset('assets/js/count-up.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    
+
     <script>
         // Force hide preloader after page load (fallback)
         function hidePreloader() {
@@ -312,7 +313,7 @@
         // Hide preloader on DOMContentLoaded (faster)
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(hidePreloader, 500);
-            
+
             const header = document.querySelector('.header');
             if (header && window.scrollY > 50) {
                 header.classList.add('sticky');
@@ -339,8 +340,8 @@
             }
         });
     </script>
-    
+
     @stack('scripts')
 </body>
-</html>
 
+</html>

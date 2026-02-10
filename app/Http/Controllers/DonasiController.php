@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class DonasiController extends Controller
 {
@@ -90,11 +91,11 @@ class DonasiController extends Controller
                 'is_production' => $this->isProduction,
                 'error' => $errorMsg,
             ]);
-            
+
             $errorMessage = isset($snapTokenResult['error']) ? $snapTokenResult['error'] : 'Gagal membuat transaksi. Silakan coba lagi atau hubungi administrator.';
             return back()->withInput()->with('error', $errorMessage);
         }
-        
+
         $snapToken = $snapTokenResult['token'];
 
         return view('frontend.donasi.payment', [
@@ -118,12 +119,12 @@ class DonasiController extends Controller
                 ];
             }
 
-            $baseUrl = $this->isProduction 
-                ? 'https://app.midtrans.com' 
+            $baseUrl = $this->isProduction
+                ? 'https://app.midtrans.com'
                 : 'https://app.sandbox.midtrans.com';
 
             $url = $baseUrl . '/snap/v1/transactions';
-            
+
             Log::info('Requesting Snap Token', [
                 'url' => $url,
                 'order_id' => $transaction['transaction_details']['order_id'],
@@ -144,7 +145,7 @@ class DonasiController extends Controller
             if ($response->successful()) {
                 $responseData = $response->json();
                 $token = isset($responseData['token']) ? $responseData['token'] : null;
-                
+
                 if ($token) {
                     Log::info('Snap Token generated successfully', [
                         'order_id' => $transaction['transaction_details']['order_id'],
@@ -166,7 +167,7 @@ class DonasiController extends Controller
 
             $errorBody = $response->json();
             $errorMessage = 'Gagal membuat transaksi Midtrans.';
-            
+
             if (isset($errorBody['error_messages'])) {
                 if (is_array($errorBody['error_messages'])) {
                     $errorMessage = implode(', ', $errorBody['error_messages']);
@@ -250,12 +251,12 @@ class DonasiController extends Controller
                 // Get status_code and transaction_status
                 $statusCode = isset($status['status_code']) ? (string)$status['status_code'] : null;
                 $transactionStatus = isset($status['transaction_status']) ? $status['transaction_status'] : 'pending';
-                
+
                 // Ensure status_code and transaction_status are synchronized
                 // Midtrans status_code: 200 = settlement, 201 = pending, 202 = cancel/expire
                 if ($statusCode === null) {
                     // Map transaction_status to status_code if status_code is missing
-                    switch($transactionStatus) {
+                    switch ($transactionStatus) {
                         case 'settlement':
                             $statusCode = '200';
                             break;
@@ -293,11 +294,11 @@ class DonasiController extends Controller
                     'payment_type' => isset($status['payment_type']) ? $status['payment_type'] : null,
                     'bank' => $bank,
                     'transaction_status' => $transactionStatus,
-                    'transaction_time' => isset($status['transaction_time']) 
-                        ? date('Y-m-d H:i:s', strtotime($status['transaction_time'])) 
+                    'transaction_time' => isset($status['transaction_time'])
+                        ? date('Y-m-d H:i:s', strtotime($status['transaction_time']))
                         : null,
-                    'settlement_time' => isset($status['settlement_time']) 
-                        ? date('Y-m-d H:i:s', strtotime($status['settlement_time'])) 
+                    'settlement_time' => isset($status['settlement_time'])
+                        ? date('Y-m-d H:i:s', strtotime($status['settlement_time']))
                         : null,
                     'status_code' => $statusCode,
                     'gross_amount' => isset($status['gross_amount']) ? $status['gross_amount'] : $donasi->jumlah,
@@ -322,13 +323,13 @@ class DonasiController extends Controller
     private function getTransactionStatus($orderId)
     {
         try {
-            $baseUrl = $this->isProduction 
-                ? 'https://api.midtrans.com' 
+            $baseUrl = $this->isProduction
+                ? 'https://api.midtrans.com'
                 : 'https://api.sandbox.midtrans.com';
 
             $response = Http::withOptions([
-                    'verify' => false, // Disable SSL verification for development
-                ])
+                'verify' => false, // Disable SSL verification for development
+            ])
                 ->withBasicAuth($this->serverKey, '')
                 ->get($baseUrl . '/v2/' . $orderId . '/status');
 
@@ -362,7 +363,7 @@ class DonasiController extends Controller
     public function finish(Request $request)
     {
         $orderId = $request->order_id;
-        
+
         // Update transaction status from Midtrans
         $donasi = Donasi::where('order_id', $orderId)->first();
         if ($donasi) {
@@ -371,7 +372,7 @@ class DonasiController extends Controller
                 $this->updateDonasiFromStatus($donasi, $status);
             }
         }
-        
+
         return redirect()->route('donasi.status', $orderId);
     }
 
@@ -381,7 +382,7 @@ class DonasiController extends Controller
     public function unfinish(Request $request)
     {
         $orderId = $request->order_id;
-        
+
         // Update transaction status from Midtrans
         $donasi = Donasi::where('order_id', $orderId)->first();
         if ($donasi) {
@@ -390,7 +391,7 @@ class DonasiController extends Controller
                 $this->updateDonasiFromStatus($donasi, $status);
             }
         }
-        
+
         return redirect()->route('donasi.status', $orderId)
             ->with('warning', 'Pembayaran belum selesai. Silakan selesaikan pembayaran Anda.');
     }
@@ -401,7 +402,7 @@ class DonasiController extends Controller
     public function error(Request $request)
     {
         $orderId = $request->order_id;
-        
+
         // Update transaction status from Midtrans
         $donasi = Donasi::where('order_id', $orderId)->first();
         if ($donasi) {
@@ -410,7 +411,7 @@ class DonasiController extends Controller
                 $this->updateDonasiFromStatus($donasi, $status);
             }
         }
-        
+
         return redirect()->route('donasi.status', $orderId)
             ->with('error', 'Terjadi kesalahan saat proses pembayaran. Silakan coba lagi.');
     }
@@ -445,12 +446,12 @@ class DonasiController extends Controller
         // Get status_code and transaction_status
         $statusCode = isset($status['status_code']) ? (string)$status['status_code'] : null;
         $transactionStatus = isset($status['transaction_status']) ? $status['transaction_status'] : 'pending';
-        
+
         // Ensure status_code and transaction_status are synchronized
         // Midtrans status_code: 200 = settlement, 201 = pending, 202 = cancel/expire
         if ($statusCode === null) {
             // Map transaction_status to status_code if status_code is missing
-            switch($transactionStatus) {
+            switch ($transactionStatus) {
                 case 'settlement':
                     $statusCode = '200';
                     break;
@@ -488,16 +489,50 @@ class DonasiController extends Controller
             'payment_type' => isset($status['payment_type']) ? $status['payment_type'] : null,
             'bank' => $bank,
             'transaction_status' => $transactionStatus,
-            'transaction_time' => isset($status['transaction_time']) 
-                ? date('Y-m-d H:i:s', strtotime($status['transaction_time'])) 
+            'transaction_time' => isset($status['transaction_time'])
+                ? date('Y-m-d H:i:s', strtotime($status['transaction_time']))
                 : null,
-            'settlement_time' => isset($status['settlement_time']) 
-                ? date('Y-m-d H:i:s', strtotime($status['settlement_time'])) 
+            'settlement_time' => isset($status['settlement_time'])
+                ? date('Y-m-d H:i:s', strtotime($status['settlement_time']))
                 : null,
             'status_code' => $statusCode,
             'gross_amount' => isset($status['gross_amount']) ? $status['gross_amount'] : $donasi->jumlah,
             'fraud_status' => isset($status['fraud_status']) ? $status['fraud_status'] : null,
         ]);
     }
-}
 
+    public function input_manual(Request $request)
+    {
+        // Validasi data
+        $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'no_hp' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'program' => 'required|string|max:255',
+            'jumlah' => 'required|numeric',
+            'keterangan_pesan' => 'nullable|string',
+        ]);
+        // Generate data transaksi otomatis
+        $lastDonasi = Donasi::latest('id')->first(); // ambil donasi terakhir untuk nomor urut
+        $number = $lastDonasi ? $lastDonasi->id + 1 : 1;
+        $orderId = 'MANUAL-' . str_pad($number, 3, '0', STR_PAD_LEFT);
+
+        $now = Carbon::now(); // waktu saat ini
+
+        $validated['order_id'] = $orderId;
+        $validated['transaction_id'] = 'MANUAL-' . Str::upper(Str::random(6)); // kode random 6 karakter
+        $validated['payment_type'] = 'manual';
+        $validated['bank'] = 'manual';
+        $validated['transaction_status'] = 'settlement';
+        $validated['status_code'] = '200';
+        $validated['transaction_time'] = $now;
+        $validated['settlement_time'] = $now;
+        $validated['gross_amount'] = $validated['jumlah'];
+        $validated['fraud_status'] = 'accept';
+        // Simpan ke database
+        Donasi::create($validated);
+
+        // Redirect atau kembalikan response
+        return redirect()->back()->with('success', 'Data donasi berhasil ditambahkan!');
+    }
+}

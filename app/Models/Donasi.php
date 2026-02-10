@@ -37,6 +37,7 @@ class Donasi extends Model
         'gross_amount' => 'decimal:2',
         'transaction_time' => 'datetime',
         'settlement_time' => 'datetime',
+        'created_at' => 'datetime',
     ];
 
     /**
@@ -68,7 +69,7 @@ class Donasi extends Model
      */
     public function getStatusBadgeAttribute()
     {
-        switch($this->transaction_status) {
+        switch ($this->transaction_status) {
             case 'settlement':
                 return 'success';
             case 'pending':
@@ -127,4 +128,3 @@ class Donasi extends Model
         return '-';
     }
 }
-

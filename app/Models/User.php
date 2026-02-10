@@ -45,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'last_login' => 'datetime',
     ];
+
+    public function hasRole($role)
+    {
+        return strtolower($this->hak_akses) === strtolower($role);
+    }
 }

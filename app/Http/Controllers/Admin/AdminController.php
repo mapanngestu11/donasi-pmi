@@ -16,7 +16,7 @@ class AdminController extends Controller
         if (Auth::check()) {
             return redirect()->route('admin.dashboard');
         }
-        
+
         return view('admin.login');
     }
 
@@ -32,12 +32,12 @@ class AdminController extends Controller
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
-            
+
             // Update last login
             Auth::user()->update([
                 'last_login' => now()
             ]);
-            
+
             return redirect()->intended(route('admin.dashboard'));
         }
 
@@ -54,23 +54,23 @@ class AdminController extends Controller
         // Total Pendapatan (dari donasi dengan status settlement)
         $totalPendapatan = \App\Models\Donasi::where('transaction_status', 'settlement')
             ->sum('jumlah');
-        
+
         // Total Pengeluaran
         $totalPengeluaran = \App\Models\Pengeluaran::sum('besar_anggaran');
-        
+
         // Jumlah Donatur (unique donatur yang sudah settlement)
         $jumlahDonatur = \App\Models\Donasi::where('transaction_status', 'settlement')
             ->distinct()
             ->count('email');
-        
+
         // Jumlah Kegiatan (total gallery)
         $jumlahKegiatan = \App\Models\Gallery::count();
-        
+
         // 3 Donasi Terbaru
         $donasiTerbaru = \App\Models\Donasi::orderBy('created_at', 'desc')
             ->limit(3)
             ->get();
-        
+
         // Data untuk grafik pemasukan bulanan (12 bulan terakhir)
         $bulanan = [];
         $labels = [];
@@ -78,12 +78,12 @@ class AdminController extends Controller
             $date = now()->subMonths($i);
             $bulan = $date->format('M');
             $labels[] = $bulan;
-            
+
             $pemasukan = \App\Models\Donasi::where('transaction_status', 'settlement')
                 ->whereYear('settlement_time', $date->year)
                 ->whereMonth('settlement_time', $date->month)
                 ->sum('jumlah');
-            
+
             $bulanan[] = $pemasukan;
         }
 
@@ -104,11 +104,10 @@ class AdminController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        
+
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        
+
         return redirect()->route('admin.login')->with('success', 'Anda telah berhasil logout.');
     }
 }
-
