@@ -8,40 +8,68 @@
                     <!-- Single Widget -->
                     <div class="single-footer f-about">
                         <div class="logo" style="margin-bottom: 20px;">
-                            <a href="{{ route('home') }}" class="pmi-logo" style="text-decoration: none; display: flex; align-items: center;">
+                            <a href="{{ route('home') }}" class="pmi-logo"
+                                style="text-decoration: none; display: flex; align-items: center;">
                                 <div class="logo-container" style="display: flex; align-items: center; gap: 15px;">
                                     <div class="logo-left" style="display: flex; align-items: center; gap: 12px;">
-                                        <div class="pmi-icon" style="display: flex; align-items: center; justify-content: center;">
-                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M25 8 C28 8, 31 9, 33 11 C35 13, 36 16, 36 19 C38 20, 39 22, 39 25 C39 28, 38 30, 36 31 C36 34, 35 37, 33 39 C31 41, 28 42, 25 42 C22 42, 19 41, 17 39 C15 37, 14 34, 14 31 C12 30, 11 28, 11 25 C11 22, 12 20, 14 19 C14 16, 15 13, 17 11 C19 9, 22 8, 25 8 Z" stroke="#DC143C" stroke-width="2.5" fill="none"/>
-                                                <line x1="25" y1="18" x2="25" y2="32" stroke="#DC143C" stroke-width="3.5" stroke-linecap="round"/>
-                                                <line x1="18" y1="25" x2="32" y2="25" stroke="#DC143C" stroke-width="3.5" stroke-linecap="round"/>
-                                            </svg>
+                                        <div class="pmi-icon"
+                                            style="display: flex; align-items: center; justify-content: center;">
+                                            <img src="{{ asset('assets/images/logo-pmi.jpeg') }}" alt="PMI Logo"
+                                                style="margin-top:-10px; margin-bottom:-10px" width="100px"
+                                                height="120px">
                                         </div>
-                                        <div class="logo-text" style="display: flex; flex-direction: column; line-height: 1.2;">
-                                            <div class="text-line" style="color: #fff; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">Palang</div>
-                                            <div class="text-line" style="color: #fff; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">Merah</div>
-                                            <div class="text-line" style="color: #fff; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">Indonesia</div>
-                                        </div>
+
                                     </div>
-                                    <div class="logo-divider" style="width: 3px; height: 50px; background-color: #DC143C;"></div>
-                                    <div class="logo-right" style="display: flex; flex-direction: column; line-height: 1.2;">
-                                        <div class="text-line" style="color: #DC143C; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">Kota</div>
-                                        <div class="text-line" style="color: #DC143C; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">Tangerang</div>
-                                        <div class="text-line" style="color: rgba(255,255,255,0.8); font-style: italic; font-weight: 400; font-size: 14px; margin: 0; padding: 0;">Move For Humanity</div>
+                                    <div class="logo-divider"
+                                        style="width: 3px; height: 50px; background-color: #DC143C;"></div>
+                                    <div class="logo-right"
+                                        style="display: flex; flex-direction: column; line-height: 1.2;">
+                                        <div class="text-line"
+                                            style="color: #DC143C; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">
+                                            Kota</div>
+                                        <div class="text-line"
+                                            style="color: #DC143C; font-size: 16px; font-weight: 600; margin: 0; padding: 0;">
+                                            Tangerang</div>
+                                        <div class="text-line"
+                                            style="color: rgba(255,255,255,0.8); font-style: italic; font-weight: 400; font-size: 14px; margin: 0; padding: 0;">
+                                            Move For Humanity</div>
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 25px; line-height: 1.8;">Membantu sesama melalui donasi untuk kemanusiaan. Bersama PMI, kita wujudkan kepedulian untuk mereka yang membutuhkan.</p>
-                        <ul class="social" style="list-style: none; padding: 0; margin: 0 0 25px 0; display: flex; gap: 15px;">
-                            <li><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i class="lni lni-facebook-filled"></i></a></li>
-                            <li><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i class="lni lni-twitter-original"></i></a></li>
-                            <li><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i class="lni lni-linkedin-original"></i></a></li>
-                            <li><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i class="lni lni-youtube"></i></a></li>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 25px; line-height: 1.8;">Membantu sesama
+                            melalui donasi untuk kemanusiaan. Bersama PMI, kita wujudkan kepedulian untuk mereka yang
+                            membutuhkan.</p>
+                        <ul class="social"
+                            style="list-style: none; padding: 0; margin: 0 0 25px 0; display: flex; gap: 15px;">
+                            <li><a href="javascript:void(0)"
+                                    style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#DC143C'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i
+                                        class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)"
+                                    style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#DC143C'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i
+                                        class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)"
+                                    style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#DC143C'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i
+                                        class="lni lni-instagram"></i></a></li>
+                            <li><a href="javascript:void(0)"
+                                    style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#DC143C'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i
+                                        class="lni lni-linkedin-original"></i></a></li>
+                            <li><a href="javascript:void(0)"
+                                    style="color: rgba(255,255,255,0.8); font-size: 20px; transition: color 0.3s;"
+                                    onmouseover="this.style.color='#DC143C'"
+                                    onmouseout="this.style.color='rgba(255,255,255,0.8)'"><i
+                                        class="lni lni-youtube"></i></a></li>
                         </ul>
-                        <p class="copyright-text" style="color: rgba(255,255,255,0.6); margin: 0; font-size: 14px;">© {{ date('Y') }} Donasi PMI. All rights reserved.</p>
+                        <p class="copyright-text" style="color: rgba(255,255,255,0.6); margin: 0; font-size: 14px;">©
+                            {{ date('Y') }} Donasi PMI. All rights reserved.</p>
                     </div>
                     <!-- End Single Widget -->
                 </div>
@@ -50,12 +78,25 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget -->
                             <div class="single-footer f-link">
-                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">Layanan</h3>
+                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">Layanan
+                                </h3>
                                 <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="margin-bottom: 12px;"><a href="#pricing" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Fitur</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="{{ route('donasi.create') }}" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Donasi</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="#about" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Tentang Kami</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="#contact" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kontak</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="#pricing"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Fitur</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="{{ route('donasi.create') }}"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Donasi</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="#about"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Tentang Kami</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="#contact"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kontak</a></li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
@@ -63,12 +104,25 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget -->
                             <div class="single-footer f-link">
-                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">Bantuan</h3>
+                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">
+                                    Bantuan</h3>
                                 <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Cara Donasi</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">FAQ</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Panduan</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kebijakan</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Cara Donasi</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">FAQ</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Panduan</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kebijakan</a></li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
@@ -76,12 +130,25 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget -->
                             <div class="single-footer f-link">
-                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">Perusahaan</h3>
+                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">
+                                    Perusahaan</h3>
                                 <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Tentang PMI</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="{{ route('frontend.berita') }}" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Berita</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Karir</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="#contact" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kontak</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Tentang PMI</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="{{ route('frontend.berita') }}"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Berita</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Karir</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="#contact"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kontak</a></li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
@@ -89,11 +156,24 @@
                         <div class="col-lg-3 col-md-6 col-12">
                             <!-- Single Widget -->
                             <div class="single-footer f-link">
-                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">Legal</h3>
+                                <h3 style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 25px;">Legal
+                                </h3>
                                 <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Syarat & Ketentuan</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kebijakan Privasi</a></li>
-                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;" onmouseover="this.style.color='#DC143C'" onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kebijakan Cookie</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Syarat &
+                                            Ketentuan</a></li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kebijakan Privasi</a>
+                                    </li>
+                                    <li style="margin-bottom: 12px;"><a href="javascript:void(0)"
+                                            style="color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.3s; display: inline-block;"
+                                            onmouseover="this.style.color='#DC143C'"
+                                            onmouseout="this.style.color='rgba(255,255,255,0.8)'">Kebijakan Cookie</a>
+                                    </li>
                                 </ul>
                             </div>
                             <!-- End Single Widget -->
@@ -106,4 +186,3 @@
     <!--/ End Footer Top -->
 </footer>
 <!--/ End Footer Area -->
-

@@ -55,11 +55,9 @@
                                 <li class="nav-item">
                                     <a href="{{ request()->routeIs('home') ? '#about' : route('home') . '#about' }}"
                                         class="{{ request()->routeIs('home') ? 'page-scroll' : '' }}"
-                                        aria-label="Toggle navigation">Tentang</a>
+                                        aria-label="Toggle navigation">Laporan</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('donasi.create') }}" aria-label="Toggle navigation">Donasi</a>
-                                </li>
+
                             </ul>
                         </div> <!-- navbar collapse -->
                         <div class="button add-list-button">
