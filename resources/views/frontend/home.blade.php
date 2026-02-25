@@ -306,6 +306,7 @@
                                                     <th>No</th>
                                                     <th>Tanggal</th>
                                                     <th>Jumlah Donasi</th>
+                                                    <th>Nama Donatur</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -318,6 +319,7 @@
                                                         <td class="amount-success">
                                                             Rp {{ number_format($item->jumlah ?? 0, 0, ',', '.') }}
                                                         </td>
+                                                        <td>{{ $item->nama ?? '-' }}</td>
                                                     </tr>
                                                 @empty
                                                     <tr>
@@ -358,6 +360,7 @@
                                                     <th>Nama/Penanggung Jawab</th>
                                                     <th>Bank</th>
                                                     <th>Nominal</th>
+                                                    <th>Lampiran</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -376,6 +379,18 @@
                                                         <td>-</td>
                                                         <td class="amount-danger">
                                                             Rp {{ number_format($item->besar_anggaran ?? 0, 0, ',', '.') }}
+                                                        </td>
+                                                        <td>
+
+                                                            @if ($item->file && Storage::disk('public')->exists('pengeluaran/files/' . $item->file))
+                                                                <a href="{{ asset('storage/pengeluaran/files/' . $item->file) }}"
+                                                                    target="_blank">
+                                                                    Download
+                                                                </a>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
                                                         </td>
                                                     </tr>
                                                 @empty
