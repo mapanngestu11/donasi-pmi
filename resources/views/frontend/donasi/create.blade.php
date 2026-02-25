@@ -76,16 +76,50 @@
                                 @enderror
                             </div>
 
-                            <div class="mb-3">
-                                <label for="jumlah" class="form-label">Jumlah Donasi (Rp) <span class="text-danger">*</span></label>
-                                <input type="number" class="form-control @error('jumlah') is-invalid @enderror" 
-                                       id="jumlah" name="jumlah" value="{{ old('jumlah', $jumlah) }}" 
-                                       min="10000" step="1000" required>
-                                <small class="form-text text-muted">Minimum donasi: Rp 10.000</small>
-                                @error('jumlah')
-                                    <div class="invalid-feedback">{{ $message }}</div>
-                                @enderror
-                            </div>
+                          <div class="mb-3">
+    <label for="jumlah" class="form-label">
+        Jumlah Donasi (Rp) <span class="text-danger">*</span>
+    </label>
+
+    <select class="form-select @error('jumlah') is-invalid @enderror" 
+            id="jumlah" 
+            name="jumlah" 
+            required>
+
+        <option value="">-- Pilih Jumlah Donasi --</option>
+
+        <option value="10000" 
+            {{ old('jumlah', $jumlah) == 10000 ? 'selected' : '' }}>
+            Rp 10.000
+        </option>
+
+        <option value="20000" 
+            {{ old('jumlah', $jumlah) == 20000 ? 'selected' : '' }}>
+            Rp 20.000
+        </option>
+
+        <option value="50000" 
+            {{ old('jumlah', $jumlah) == 50000 ? 'selected' : '' }}>
+            Rp 50.000
+        </option>
+
+        <option value="100000" 
+            {{ old('jumlah', $jumlah) == 100000 ? 'selected' : '' }}>
+            Rp 100.000
+        </option>
+
+    </select>
+
+    <small class="form-text text-muted">
+        Minimum donasi: Rp 10.000
+    </small>
+
+    @error('jumlah')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
+</div>
 
                             <div class="mb-4">
                                 <label for="pesan" class="form-label">Pesan (Opsional)</label>
